@@ -1,0 +1,5 @@
+https://github.com/dpnguyen53/bc39movie
+
+====== Buổi 10 ======
+    - Routing
+    - Call Api
