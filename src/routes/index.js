@@ -38,6 +38,14 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/hooks-state",
+    element: lazy(() => import("./../pages/Hooks/State")),
+  },
+  {
+    path: "/hooks-effect",
+    element: lazy(() => import("./../pages/Hooks/Effect")),
+  },
 ];
 
 const renderRoutes = () => {
