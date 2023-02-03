@@ -3,3 +3,49 @@ https://github.com/dpnguyen53/bc39movie
 ====== Buổi 10 ======
     - Routing
     - Call Api
+
+====== Buổi 11 ======
+    - Hooks
+
+====== Buổi 12 ======
+    - Call Api ListMovie 
+    - Middleware Async Action: redux thunk
+    - Refactor Api util
+    - Detail Movie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { createStore, applyMiddleware, compose } from "redux";
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunk))
+);

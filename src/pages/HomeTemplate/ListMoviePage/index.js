@@ -1,48 +1,47 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Movie from "./Movie";
+import Loader from "./../../../components/Loader";
+import { actFetchData } from "./duck/action";
+import { connect } from "react-redux";
 
-export default class ListMoviePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: false,
-      data: null,
-      error: null,
-    };
-  }
-
+class ListMoviePage extends Component {
   componentDidMount() {
-    this.setState({
-      loading: true,
-      data: null,
-      error: null,
-    });
-
-    axios({
-      url: "https://movienew.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01",
-      method: "GET",
-      headers: {
-        TokenCybersoft:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJGcm9udCBFbmQgNzIiLCJIZXRIYW5TdHJpbmciOiIxNC8wMi8yMDIzIiwiSGV0SGFuVGltZSI6IjE2NzYzMzI4MDAwMDAiLCJuYmYiOjE2NTAzODc2MDAsImV4cCI6MTY3NjQ4MDQwMH0.e3UrKdKqwFislz0cqribEEthuaW4HOuD4xwr1CTRQwg",
-      },
-    })
-      .then((result) => {
-        this.setState({
-          loading: false,
-          data: result.data,
-          error: null,
-        });
-      })
-      .catch((error) => {
-        this.setState({
-          loading: false,
-          data: null,
-          error: error,
-        });
-      });
+    this.props.fetchData();
   }
+
+  renderListMovie = () => {
+    const { data, loading } = this.props;
+    if (loading) return <Loader />;
+
+    return data?.map((movie) => {
+      return <Movie key={movie.maPhim} movie={movie} />;
+    });
+  };
 
   render() {
-    return <div>ListMoviePage</div>;
+    return (
+      <div className="container">
+        ListMoviePage
+        <div className="row">{this.renderListMovie()}</div>
+      </div>
+    );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    loading: state.listMovieReducer.loading,
+    data: state.listMovieReducer.data,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchData: () => {
+      dispatch(actFetchData());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListMoviePage);
