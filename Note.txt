@@ -11,7 +11,11 @@ https://github.com/dpnguyen53/bc39movie
     - Call Api ListMovie 
     - Middleware Async Action: redux thunk
     - Refactor Api util
+
+====== Buổi 13 ======
     - Detail Movie
+    - Auth
+    - Guard Routing Admin
 
 
 
