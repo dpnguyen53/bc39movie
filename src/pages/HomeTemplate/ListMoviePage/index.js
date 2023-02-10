@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
 import Movie from "./Movie";
-import Loader from "./../../../components/Loader";
+import Loader from "components/Loader";
 import { actFetchData } from "./duck/action";
 import { connect } from "react-redux";
 

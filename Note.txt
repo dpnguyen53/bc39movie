@@ -17,7 +17,18 @@ https://github.com/dpnguyen53/bc39movie
     - Auth
     - Guard Routing Admin
 
+====== Buổi 14 ======
+    - Guard Routing Admin
+    - Add User
+    - alias
 
+
+    - Styled Component (JSS)
+    - scss
+    - Deploy
+    - Deploy tay
+        + Hosting
+    - Deploy vercel
 
 
 
