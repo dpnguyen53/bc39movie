@@ -22,13 +22,15 @@ https://github.com/dpnguyen53/bc39movie
     - Add User
     - alias
 
-
-    - Styled Component (JSS)
+====== Buổi 15 ======
     - scss
+    - Styled Component (JSS)
+    - antd
+    - hooks
     - Deploy
-    - Deploy tay
-        + Hosting
-    - Deploy vercel
+        + Deploy tay
+            + Hosting
+        + Deploy vercel
 
 
 

@@ -9,6 +9,7 @@ import "popper.js/dist/umd/popper.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
 import store from "./store";
 import { Provider } from "react-redux";
+import "./scss/style.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
