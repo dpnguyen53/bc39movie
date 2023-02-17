@@ -33,7 +33,9 @@ https://github.com/dpnguyen53/bc39movie
         + Deploy vercel
 
 
-
+====== Buổi 16 ======
+    - HOC
+    
 
 
 
